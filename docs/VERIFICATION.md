@@ -122,7 +122,7 @@ works at a domain root or any project subpath.
 | Repository | `github.com/forsha7class/rizzy` (public) |
 | Source branch | `main` |
 | Pages branch | `gh-pages` (contents of `dist/`, including `.nojekyll`) |
-| Rebrand deploy commit | `86c7377` — purple identity, official pricing, QRIS/USDT artwork |
+| Rebrand deploy commit | `6ff8813` — final purple palette, official pricing, QRIS/USDT artwork |
 | Live URL | https://forsha7class.github.io/rizzy/ |
 | Root / index | HTTP 200 |
 | Logo WebP / OG image / robots | HTTP 200 / 200 / 200 |
