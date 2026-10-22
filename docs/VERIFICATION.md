@@ -122,12 +122,17 @@ works at a domain root or any project subpath.
 | Repository | `github.com/forsha7class/rizzy` (public) |
 | Source branch | `main` |
 | Pages branch | `gh-pages` (contents of `dist/`, including `.nojekyll`) |
+| Rebrand deploy commit | `86c7377` — purple identity, official pricing, QRIS/USDT artwork |
 | Live URL | https://forsha7class.github.io/rizzy/ |
 | Root / index | HTTP 200 |
 | Logo WebP / OG image / robots | HTTP 200 / 200 / 200 |
+| QRIS/USDT card WebP | HTTP 200 / 200 |
+| Official QRIS/Tether SVG | HTTP 200 / 200 |
 | Unknown static file | HTTP 404 as expected; hash routes need no server fallback |
-| Desktop journey | Landing → order → checkout → payment → submitted: passed |
-| Mobile 375 journey | Same journey: passed, no horizontal overflow |
+| Desktop journey | Landing → order → checkout → payment → QRIS/USDT switch: passed |
+| Mobile 375 journey | Landing and payment: passed, no horizontal overflow |
+| Live price check | Solo `Rp 18.000`; Duo ×2 `Rp 72.000`; USDT illustration `≈ 1,13` |
+| Live console | 0 page errors / 0 console errors |
 | Reload on `#/payment` | Guarded empty state rendered, no stored order |
 | Console/page errors | none |
 | Failed requests | none |

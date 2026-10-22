@@ -40,4 +40,13 @@ test('order, checkout, and payment have no serious accessibility violations', as
     page.getByRole('heading', { name: /Pembayaran simulasi dikirim/i }),
   ).toBeVisible()
   await expectNoSeriousViolations(page)
+
+  await page.getByRole('button', { name: /Simulasikan kurang bayar/i }).click()
+  await expect(page.getByRole('heading', { name: /Simulasi kurang bayar/i })).toBeVisible()
+  await expectNoSeriousViolations(page)
+
+  await page.getByRole('button', { name: /Simulasikan pembayaran ulang/i }).first().click()
+  await page.getByRole('button', { name: /Simulasikan kelebihan bayar/i }).click()
+  await expect(page.getByRole('heading', { name: /Simulasi kelebihan bayar/i })).toBeVisible()
+  await expectNoSeriousViolations(page)
 })

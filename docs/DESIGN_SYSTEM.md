@@ -32,7 +32,7 @@ Sampled from the supplied RIZZY logo.
 | `--color-paper` | `#F6F2E8` | Page ground |
 | `--color-cream` | `#FFFDF7` | Elevated cards |
 | `--color-gold` | `#E9A63C` | Warm food accent, warning states |
-| `--color-magenta` | `#C93B76` | Rare photographic echo, overpayment state |
+| `--color-magenta` | `#B02A63` | Rare photographic echo, overpayment state |
 | `--color-success` | `#1B7F5A` | Verified / completed states |
 | `--color-danger` | `#B3261E` | Destructive or error text only |
 
