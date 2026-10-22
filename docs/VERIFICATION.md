@@ -20,12 +20,13 @@ Production output (gzip measured with `gzip -9`):
 
 | Asset | Raw | Gzip |
 | --- | --- | --- |
-| `dist/assets/index-*.js` | 440,370 B | 131,981 B |
-| `dist/assets/index-*.css` | 66,000 B | 12,793 B |
+| `dist/assets/index-*.js` | 439,040 B | 133,020 B |
+| `dist/assets/index-*.css` | 66,050 B | 13,330 B |
 | Fonts | 6 self-hosted `.woff2` files | — |
 
 No runtime request to Google Fonts, analytics, wallets, payment gateways, or any
-third-party origin exists.
+third-party origin exists. Official QRIS and Tether marks are bundled locally in
+`public/assets/brand/`; the payment cards are local PNG/WebP derivatives.
 
 ## 2. Unit and component tests
 
@@ -37,8 +38,8 @@ Coverage:
 - Rupiah/USDT formatting and invalid-rate guards.
 - Quantity clamping, subtotal/total math, absence of fees.
 - Full state-machine matrix, invalid events, reset from every status, presenter actions.
-- Catalog invariants: 3 demo packages, unique IDs, positive integer prices, demo flags,
-  no wallet-address-like strings, disclaimer contains “bukan harga resmi”.
+- Catalog invariants: 3 packages, unique IDs, positive integer official prices, no
+  wallet-address-like strings, disclaimer states “harga resmi” and “simulasi”.
 - Landing narrative and Buy Now target.
 - Package selection, quantity, recalculation, checkout guard and summary.
 - Complete QRIS simulation: submitted → underpaid → retry → verified → processing →
@@ -58,11 +59,11 @@ projects, skipped intentionally by `testInfo.project.name`.
 Covered:
 
 - Landing → Buy Now → order.
-- Package and quantity selection; total `Rp 104.000` for Duo ×2.
+- Package and quantity selection; total `Rp 72.000` for Duo ×2.
 - Checkout summary and payment hand-off.
 - QRIS completion and the underpayment branch.
 - Overpayment branch and return to submitted.
-- USDT amount `≈ 1,75 USDT` for Rp28.000 at the illustrative rate, with non-binding
+- USDT amount `≈ 1,13 USDT` for Rp18.000 at the illustrative rate, with non-binding
   rate and no-wallet notes.
 - Reset demo clears in-memory state and returns to `#/order`.
 - Deep links, refresh, unknown hash, and guarded states without an order.
@@ -70,8 +71,8 @@ Covered:
 - Mobile menu opens, traps focus, closes with Escape, restores focus, and navigates.
 - Mobile sticky summary action is reachable.
 - No horizontal overflow on all four routes at 375/768/1440.
-- QR contains the visible `DEMO` / `TIDAK DAPAT DIPINDAI` labels and no wallet/payment
-  payload patterns.
+- QR image has the non-scannable alt/caption, the supplied artwork is centre-covered,
+  and the page contains no wallet/payment payload patterns.
 
 ## 4. Accessibility
 
@@ -80,7 +81,8 @@ Tool: axe-core via `@axe-core/playwright`, tags `wcag2a`, `wcag2aa`, `wcag21a`,
 
 Scanned: landing, order, checkout, payment (awaiting), payment (submitted), across the
 three Playwright projects.  
-Result: **0 serious/critical violations** after fixing contrast tokens.
+Result: **0 serious/critical violations** after fixing the QRIS tab accessible name and
+reviewing the purple contrast tokens.
 
 Manual/structural checks covered by tests and code review:
 
@@ -141,16 +143,18 @@ Headless Chromium, default mobile emulation and desktop preset.
 
 | Category | Mobile (final run) | Desktop |
 | --- | --- | --- |
-| Performance | **91–94** (latest 94) | **100** |
+| Performance | **93** | **100** |
 | Accessibility | **100** | **100** |
 | Best Practices | **100** | **100** |
 | SEO | **100** | **100** |
-| LCP | 2.6–2.7 s | 0.6 s |
-| TBT | 220 ms | 0 ms |
+| LCP | 2.7 s | 0.6 s |
+| TBT | 160 ms | 20 ms |
 | CLS | 0 | 0 |
 
-Mobile runs scored **91, 93, and 94**; the difference is normal lab variance. All runs
-meet the ≥90 performance and ≥95 accessibility targets.
+The clean single-run mobile score was **93**; a concurrent two-run batch produced a
+lower 79 due to CPU contention and was discarded. All reported runs meet the ≥90
+performance and ≥95 accessibility targets. The new QR and official brand marks live on
+the payment route and do not affect the landing LCP.
 
 ## 7. Privacy and simulation checks
 
@@ -161,7 +165,8 @@ meet the ≥90 performance and ≥95 accessibility targets.
 - No form collects personal or payment data.
 - No wallet address, chain, merchant payload, or encoded QR data exists.
 - The USDT rate is a fixed illustration in `src/config/demo-payment.ts`, not fetched.
-- QR matrices are generated locally from a fixed seed; they encode nothing.
+- Supplied QR artwork is recoloured, centre-covered, and verified non-decodable with
+  `zbarimg`; the app ships no generated payload or wallet address.
 
 ## 8. Visual evidence
 
@@ -172,7 +177,8 @@ Committed screenshots in `docs/screenshots/`:
 - `payment-1440.webp`
 
 Additional captures were reviewed at 768 and 375 during the build; the committed set
-covers desktop landing, mobile ordering, and desktop payment.
+covers desktop landing, mobile ordering, and the full desktop payment page in the new
+purple identity.
 
 ## 9. What was not verified
 
@@ -181,4 +187,5 @@ covers desktop landing, mobile ordering, and desktop payment.
 - No screen-reader session (NVDA/VoiceOver) was recorded; axe and keyboard tests were used.
 - GitHub Actions deployment is not active; the live site is published manually from `gh-pages`.
 - Lighthouse scores are environment-specific and are not a guarantee for every network.
-- The logo is raster only; print quality and vector fidelity are not verified.
+- The RIZZY logo is raster only; print quality and vector fidelity are not verified.
+  QRIS and Tether marks use official SVG sources for on-screen identification.

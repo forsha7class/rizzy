@@ -17,7 +17,7 @@ export function Footer() {
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
             <div className="inline-flex rounded-2xl bg-cream p-4">
-              <Wordmark className="w-[150px]" />
+              <Wordmark className="w-[170px]" />
             </div>
             <p className="mt-6 max-w-sm font-display text-2xl leading-tight font-semibold tracking-[-0.02em] text-cream">
               {siteConfig.tagline}
@@ -28,7 +28,7 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-3">
-            <h2 className="eyebrow text-electric">Jelajahi</h2>
+            <h2 className="eyebrow text-orchid">Jelajahi</h2>
             <ul className="mt-5 space-y-1">
               {footerLinks.map((link) => (
                 <li key={link.href}>
@@ -44,14 +44,14 @@ export function Footer() {
           </div>
 
           <div className="lg:col-span-4">
-            <h2 className="eyebrow text-electric">Catatan</h2>
+            <h2 className="eyebrow text-orchid">Catatan</h2>
             <div className="mt-5 rounded-2xl border border-cream/15 bg-cream/5 p-4">
               <p className="eyebrow text-gold">{landingContent.footer.demoLabel}</p>
               <p className="mt-2 text-sm leading-relaxed text-cream/70">{siteConfig.demoNotice}</p>
             </div>
             <p className="mt-4 text-xs leading-relaxed text-cream/60">
-              {siteConfig.presentationNote} Harga, paket, dan status pembayaran di situs ini adalah
-              contoh.
+              {siteConfig.presentationNote} Harga mengikuti daftar resmi. Status pembayaran di situs
+              ini adalah simulasi.
             </p>
           </div>
         </div>

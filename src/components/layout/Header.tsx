@@ -23,7 +23,7 @@ export function Header({ path }: { path: string }) {
           aria-label="RIZZY — beranda"
           className="shrink-0 rounded-sm focus-visible:outline-3 focus-visible:outline-offset-4 focus-visible:outline-electric"
         >
-          <Wordmark className="w-[96px] sm:w-[120px]" decorative />
+          <Wordmark className="w-[108px] sm:w-[136px]" decorative />
         </a>
 
         <nav aria-label="Navigasi utama" className="hidden items-center gap-7 lg:flex">

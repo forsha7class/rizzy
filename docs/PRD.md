@@ -28,9 +28,9 @@ authentication, analytics, or real order submission.
 | Architecture | Client-side React SPA with hash routing |
 | Data | None persisted; in-memory React state only |
 | Payments | Visual simulation only |
-| Prices | Demonstration values only; official prices not established |
+| Prices | Official: Solo Rp18.000, Duo Rp36.000, Rame Rp72.000; ordering stays simulated |
 | Photography | Supplied product and team photos only; no stock/generated food imagery |
-| Brand identity | Derived from the supplied RIZZY logo (blue family) |
+| Brand identity | Derived from the supplied RIZZY logo (purple family) |
 
 ## 3. Goals
 
@@ -84,8 +84,8 @@ Sections: hero, story, customer need, product showcase, value, closing CTA, foot
 
 ### 6.2 Package selection (`#/order`)
 
-- Three demonstration packages from `src/config/demo-catalog.ts`.
-- Clearly labelled as example packages and example prices.
+- Three packages from `src/config/demo-catalog.ts` with official prices.
+- Clear “Harga resmi” labels while the ordering flow remains a simulation.
 - Radio-group semantics, selected state visible in text and border.
 - Quantity stepper, 1–10, keyboard accessible.
 - Subtotal recalculates from unit price × quantity.
@@ -104,7 +104,8 @@ Sections: hero, story, customer need, product showcase, value, closing CTA, foot
 ### 6.4 Payment (`#/payment`)
 
 - QRIS and USDT tabs, both visual simulations.
-- Non-functional QR illustration with “DEMO / NOT SCANNABLE” treatment.
+- Non-functional QR artwork derived from the supplied QRIS/USDT assets, recoloured
+  purple and centre-covered with a “DEMO / TIDAK DAPAT DIPINDAI” treatment.
 - Simulated amount, plus an illustrative USDT value and non-binding rate note.
 - No wallet address, network, merchant payload, or external request.
 - Primary action: “Simulasikan sudah membayar”.
@@ -156,11 +157,11 @@ any → idle (reset)
 ## 10. Acceptance criteria
 
 1. Landing page communicates brand, product, and value.
-2. Visual identity is coherent and clearly derived from the supplied blue logo.
+2. Visual identity is coherent and clearly derived from the supplied purple logo.
 3. Buy Now reaches `#/order`.
 4. Package and quantity selection work with correct totals.
 5. Checkout summary matches the selection.
-6. QRIS and USDT screens both work and show mock QR graphics.
+6. QRIS and USDT screens both work and show official, non-scannable QR artwork.
 7. Scripted payment statuses behave deterministically; reset works.
 8. No real transaction, personal data, backend, or persistence exists.
 9. Layouts work at 375, 768, and 1440 px without horizontal scrolling.

@@ -39,7 +39,7 @@ export function Showcase() {
                 delay={index * 0.08}
                 className="grid gap-3 py-6 sm:grid-cols-[auto_1fr] sm:gap-6"
               >
-                  <span className="font-display text-xs font-bold tabular-nums text-electric">
+                  <span className="font-display text-xs font-bold tabular-nums text-orchid">
                     {item.index}
                   </span>
                   <div>

@@ -51,7 +51,7 @@ describe('RIZZY demo application', () => {
     await user.click(screen.getByRole('button', { name: 'Tambah jumlah' }))
     expect(screen.getByLabelText('Jumlah: 2')).toBeInTheDocument()
 
-    const totals = screen.getAllByText((content) => content.replace(/\s/g, ' ') === 'Rp 104.000')
+    const totals = screen.getAllByText((content) => content.replace(/\s/g, ' ') === 'Rp 72.000')
     expect(totals.length).toBeGreaterThan(0)
 
     for (const button of screen.getAllByRole('button', { name: /^Checkout/i })) {
@@ -66,7 +66,7 @@ describe('RIZZY demo application', () => {
     const summary = screen.getByRole('heading', { name: 'Paket Duo' }).closest('section')
     expect(summary).not.toBeNull()
     expect(within(summary as HTMLElement).getByText(/2 paket/)).toBeInTheDocument()
-    expect(screen.getAllByText((content) => content.replace(/\s/g, ' ') === 'Rp 104.000').length).toBeGreaterThan(0)
+    expect(screen.getAllByText((content) => content.replace(/\s/g, ' ') === 'Rp 72.000').length).toBeGreaterThan(0)
   })
 
   it('runs the complete QRIS simulation, including held and verified states, then resets', async () => {
@@ -126,7 +126,7 @@ describe('RIZZY demo application', () => {
 
     await user.click(screen.getByRole('tab', { name: /USDT/i }))
     expect(screen.getByRole('img', { name: /Ilustrasi QR USDT untuk demo/i })).toBeInTheDocument()
-    expect(screen.getByText(/≈ 6,50 USDT/)).toBeInTheDocument()
+    expect(screen.getByText(/≈ 4,50 USDT/)).toBeInTheDocument()
     expect(screen.getByText(/Bukan kurs resmi/i)).toBeInTheDocument()
     expect(screen.getByText(/tidak menyediakan alamat wallet/i)).toBeInTheDocument()
   })

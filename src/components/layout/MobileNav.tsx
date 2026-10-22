@@ -99,7 +99,7 @@ export function MobileNav({
           >
             <div className="flex items-center justify-between gap-4">
               <a href="#/" onClick={onClose} aria-label="RIZZY — beranda" className="shrink-0">
-                <Wordmark className="w-[108px]" decorative />
+                <Wordmark className="w-[120px]" decorative />
               </a>
               <button
                 ref={closeRef}

@@ -56,7 +56,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <button type={type} className={buttonStyles({ variant, size, className })} {...props}>
-      <span>{children}</span>
+      <span className="inline-flex items-center gap-2.5">{children}</span>
       {trailing ?? null}
     </button>
   )

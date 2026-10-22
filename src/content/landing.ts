@@ -105,7 +105,7 @@ export const landingContent = {
       {
         index: '03',
         title: 'Pas di kantong',
-        body: 'Konsep harga dirancang untuk makan sehari-hari. Harga resmi belum ditetapkan, jadi angka di demo ini hanya contoh.',
+        body: 'Harga resmi mulai Rp18.000. Alur pemesanan di situs ini tetap simulasi, bukan transaksi nyata.',
       },
     ],
     footnote: 'Belum ada testimoni, penghargaan, atau angka penjualan yang diklaim di situs ini.',
@@ -115,7 +115,7 @@ export const landingContent = {
     eyebrow: 'Mulai',
     title: 'Coba alur pesannya.',
     description:
-      'Pilih paket contoh, lihat ringkasan, lalu jalankan simulasi pembayaran QRIS atau USDT. Semua status di demo ini scripted — tidak ada transaksi nyata.',
+      'Pilih paket, lihat ringkasan, lalu jalankan simulasi pembayaran QRIS atau USDT. Semua status di demo ini scripted — tidak ada transaksi nyata.',
     cta: 'Buy Now',
     secondary: 'Kembali ke cerita',
   },

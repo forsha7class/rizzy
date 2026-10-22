@@ -54,7 +54,7 @@ export function CheckoutPage() {
               >
                 <div className="flex flex-wrap items-start justify-between gap-3 border-b border-ink/10 pb-5">
                   <div>
-                    <p className="eyebrow text-royal">Paket demo</p>
+                    <p className="eyebrow text-royal">Paket</p>
                     <h2
                       id="summary-title"
                       className="mt-2 font-display text-2xl font-semibold tracking-[-0.03em] sm:text-3xl"
@@ -130,18 +130,18 @@ export function CheckoutPage() {
 
               <div className="mt-5 flex items-start gap-3 rounded-2xl border border-ink/10 bg-cream p-4">
                 <Badge tone="gold" className="mt-0.5 shrink-0">
-                  Harga contoh
+                  Harga resmi
                 </Badge>
                 <p className="text-xs leading-relaxed text-ink/70">
-                  {formatIdr(totals.totalIdr)} adalah total simulasi. Harga resmi RIZZY belum
-                  ditetapkan dan tidak ada transaksi yang diproses oleh situs ini.
+                  {formatIdr(totals.totalIdr)} adalah total simulasi. Harga paket mengikuti daftar
+                  resmi RIZZY; tidak ada transaksi yang diproses oleh situs ini.
                 </p>
               </div>
             </div>
 
             <aside className="lg:col-span-5">
               <div className="sticky top-32 rounded-[24px] border border-ink/12 bg-ink p-5 text-cream sm:p-6">
-                <p className="eyebrow text-electric">Total simulasi</p>
+                <p className="eyebrow text-orchid">Total simulasi</p>
                 <p className="mt-3 font-display text-[clamp(2.25rem,5vw,3.25rem)] leading-none font-semibold tracking-[-0.04em] tabular-nums">
                   {formatIdr(totals.totalIdr)}
                 </p>

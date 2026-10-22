@@ -4,12 +4,13 @@
   --font-display: 'Bricolage Grotesque Variable', 'Bricolage Grotesque', ui-sans-serif, system-ui, sans-serif;
   --font-sans: 'Plus Jakarta Sans Variable', 'Plus Jakarta Sans', ui-sans-serif, system-ui, sans-serif;
 
-  --color-ink: #021f4f;
-  --color-ink-deep: #01142f;
-  --color-royal: #0350b1;
-  --color-electric: #059bf7;
-  --color-ice: #eef4fb;
-  --color-mist: #d7e6f6;
+  --color-ink: #17052e;
+  --color-ink-deep: #0b0117;
+  --color-royal: #7211d8;
+  --color-electric: #a22cf0;
+  --color-orchid: #d9a6ff;
+  --color-ice: #f7f2fd;
+  --color-mist: #e6d8f5;
   --color-paper: #f6f2e8;
   --color-cream: #fffdf7;
   --color-gold: #e9a63c;
@@ -47,7 +48,7 @@
 
   ::selection {
     background-color: var(--color-electric);
-    color: var(--color-ink-deep);
+    color: var(--color-cream);
   }
 
   :focus-visible {

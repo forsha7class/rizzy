@@ -37,8 +37,8 @@ export function OrderPage() {
             Pilih paket demo.
           </h1>
           <p className="mt-4 max-w-xl text-base leading-relaxed text-ink/65">
-            Paket dan harga di bawah adalah contoh untuk presentasi. Pilih satu, atur jumlahnya,
-            lalu lihat ringkasan sebelum masuk ke simulasi pembayaran.
+            Harga di bawah adalah harga resmi RIZZY. Pilih satu, atur jumlahnya, lalu lihat
+            ringkasan sebelum masuk ke simulasi pembayaran.
           </p>
         </div>
         <StepIndicator current={1} />
@@ -60,7 +60,7 @@ export function OrderPage() {
                       'group relative block cursor-pointer rounded-[20px] border p-5 transition-[border-color,background-color,box-shadow] duration-200 sm:p-6',
                       'has-[:focus-visible]:outline-3 has-[:focus-visible]:outline-offset-2 has-[:focus-visible]:outline-electric',
                       selected
-                        ? 'border-royal bg-ice/70 shadow-[0_16px_40px_-32px_rgba(3,80,177,0.55)]'
+                        ? 'border-royal bg-ice/70 shadow-[0_16px_40px_-32px_rgba(114,17,216,0.35)]'
                         : 'border-ink/12 bg-cream hover:border-royal/35 hover:bg-ice/30',
                     )}
                   >
@@ -98,7 +98,7 @@ export function OrderPage() {
                               {formatIdr(item.priceIdr)}
                             </p>
                             <p className="text-[0.625rem] font-bold tracking-[0.1em] text-ink/70 uppercase">
-                              Harga contoh
+                              Harga resmi
                             </p>
                           </div>
                         </div>
@@ -171,7 +171,7 @@ export function OrderPage() {
 
           <div className="mt-4 flex items-start gap-3 rounded-2xl border border-ink/10 bg-ice/50 p-4">
             <Badge tone="gold" className="mt-0.5 shrink-0">
-              Harga contoh
+              Harga resmi
             </Badge>
             <p className="text-xs leading-relaxed text-ink/70">
               {catalogDisclaimer} {packageDisclaimer}
@@ -226,7 +226,7 @@ export function OrderPage() {
               <div className="mt-4 rounded-2xl border border-dashed border-ink/20 bg-paper/70 p-5">
                 <p className="font-display text-lg font-semibold">Belum ada paket dipilih.</p>
                 <p className="mt-2 text-sm leading-relaxed text-ink/70">
-                  Pilih salah satu paket contoh di sebelah kiri untuk melihat total simulasi.
+                  Pilih salah satu paket di sebelah kiri untuk melihat total simulasi.
                 </p>
               </div>
             )}
@@ -241,7 +241,7 @@ export function OrderPage() {
             </Button>
 
             <p className="mt-3 text-center text-[0.6875rem] leading-relaxed text-ink/70">
-              Total di atas adalah simulasi. Tidak ada pesanan atau pembayaran nyata.
+              Harga resmi. Total di atas adalah simulasi dan tidak ada pembayaran nyata.
             </p>
 
             <a

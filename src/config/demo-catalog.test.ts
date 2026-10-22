@@ -2,8 +2,9 @@ import { describe, expect, it } from 'vitest'
 import { catalogDisclaimer, demoCatalog } from './demo-catalog'
 
 describe('demo catalog', () => {
-  it('ships three example packages', () => {
+  it('ships three official packages with confirmed prices', () => {
     expect(demoCatalog).toHaveLength(3)
+    expect(demoCatalog.map((item) => item.priceIdr)).toEqual([18_000, 36_000, 72_000])
   })
 
   it('has unique ids, names, and positive integer prices', () => {
@@ -16,12 +17,12 @@ describe('demo catalog', () => {
       expect(item.priceIdr).toBeGreaterThan(0)
       expect(Number.isInteger(item.priceIdr)).toBe(true)
       expect(item.contents.length).toBeGreaterThan(0)
-      expect(item.isDemo).toBe(true)
     }
   })
 
-  it('labels every price as a demonstration value', () => {
-    expect(catalogDisclaimer.toLowerCase()).toContain('bukan harga resmi')
+  it('states that prices are official while ordering stays simulated', () => {
+    expect(catalogDisclaimer.toLowerCase()).toContain('harga resmi')
+    expect(catalogDisclaimer.toLowerCase()).toContain('simulasi')
   })
 
   it('contains no wallet-address-like strings', () => {

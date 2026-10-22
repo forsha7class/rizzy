@@ -62,15 +62,16 @@ apa pun → idle (Reset demo)
 - Panel kontrol di halaman pembayaran adalah kontrol presenter, bukan admin.
 - Tombol **Reset demo** menghapus pilihan di memori dan kembali ke `#/order`.
 
-QRIS dan USDT hanya ilustrasi lokal: tidak ada payload, alamat wallet, jaringan,
-merchant, atau kurs real-time. Nilai USDT memakai kurs contoh yang bisa diubah di
-`src/config/demo-payment.ts`.
+QRIS dan USDT hanya ilustrasi lokal. QR memakai artwork yang disediakan, diwarnai ulang
+ke palet ungu, dan ditutup di bagian tengah sehingga tidak dapat dipindai. Tidak ada
+payload, alamat wallet, jaringan, merchant, atau kurs real-time. Nilai USDT memakai
+kurs ilustrasi yang bisa diubah di `src/config/demo-payment.ts`.
 
 ## Konfigurasi
 
 | File | Isi |
 | --- | --- |
-| `src/config/demo-catalog.ts` | Nama paket, isi, dan **harga contoh** |
+| `src/config/demo-catalog.ts` | Nama paket, isi, dan **harga resmi** |
 | `src/config/demo-payment.ts` | Metode, kurs USDT ilustrasi, nominal kurang/lebih |
 | `src/config/site.ts` | Nama, tagline, teks notice demo, navigasi |
 | `src/content/landing.ts` | Seluruh copy landing |
@@ -78,14 +79,16 @@ merchant, atau kurs real-time. Nilai USDT memakai kurs contoh yang bisa diubah d
 | `src/lib/pricing.ts` | Perhitungan subtotal/total murni |
 | `src/lib/demo-machine.ts` | State machine deterministik |
 
-Mengganti harga atau paket resmi nanti cukup dilakukan di catalog; jangan lupa
-menghapus label “HARGA CONTOH” setelah harga disetujui.
+Harga resmi saat ini: Solo **Rp18.000**, Duo **Rp36.000**, Rame **Rp72.000**.
+Perubahan harga cukup dilakukan di catalog; alur pemesanan tetap simulasi.
 
 ## Aset
 
 - Asli yang diunggah tetap utuh di `assets-upload/` (tidak diubah).
 - Turunan web ada di `public/assets/`:
   - `brand/logo-full`, `logo-wordmark` (PNG + WebP), monogram, favicon, OG image
+  - `brand/qris.svg` dan `brand/usdt.svg` — official marks untuk identifikasi metode
+  - `payment/qris-card` dan `payment/usdt-card` (PNG + WebP) — QR artwork ungu
   - `product/katsu.jpg` + `katsu-900.jpg` (foto produk asli, crop 4:5)
   - `team/team.jpg` (foto tim, crop lebar)
 - Foto produk dipakai satu kali sebagai bukti visual; bukan hero full-bleed.
@@ -104,9 +107,9 @@ Lingkungan: Node 24, Chromium headless, preview produksi lokal, 22 Oktober 2026.
 | axe-core (landing, order, checkout, payment, submitted) | 0 pelanggaran serious/critical |
 | `npm run verify:pages` | **PASSED** dari subpath `/rizzy/` |
 | Live GitHub Pages | **https://forsha7class.github.io/rizzy/** — HTTP 200, smoke test desktop/mobile lulus |
-| Lighthouse mobile | Performance **91–94** (run bervariasi), Accessibility **100**, Best Practices **100**, SEO **100** |
+| Lighthouse mobile | Performance **93** (run bersih), Accessibility **100**, Best Practices **100**, SEO **100** |
 | Lighthouse desktop | Performance **100**, Accessibility **100**, Best Practices **100**, SEO **100** |
-| Build | JS ±132 kB gzip, CSS ±12,8 kB gzip |
+| Build | JS ±133 kB gzip, CSS ±13,3 kB gzip |
 
 Lighthouse dijalankan pada landing page. Skor dapat berbeda tergantung perangkat,
 jaringan, dan versi Lighthouse. E2E juga memeriksa:
@@ -157,9 +160,12 @@ Workflow GitHub Actions tetap disimpan sebagai referensi di
 
 ## Batasan yang disengaja
 
-- Harga, paket, dan isi paket adalah contoh; harga resmi belum ditetapkan.
-- Logo yang tersedia hanya raster (PNG); belum ada SVG/AI/EPS.
+- Harga paket resmi; isi paket mengikuti konfigurasi presentasi.
+- Logo RIZZY yang tersedia hanya raster (PNG); belum ada SVG/AI/EPS. Mark QRIS dan
+  Tether memakai SVG resmi untuk kebutuhan identifikasi.
 - Hanya ada satu foto produk dan satu foto tim.
 - Tidak ada data kontak, sosial media, alamat, testimoni, atau penghargaan yang dibuat-buat.
 - Keranjang/ pesanan hilang saat refresh.
 - QR tidak berfungsi dan USDT tidak memiliki alamat atau jaringan.
+- Logo QRIS dan USDT/Tether digunakan hanya untuk identifikasi metode; tidak ada
+  afiliasi atau endorsement yang tersirat.

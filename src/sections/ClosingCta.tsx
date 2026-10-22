@@ -23,7 +23,7 @@ export function ClosingCta() {
         preserveAspectRatio="none"
         className="pointer-events-none absolute inset-x-0 bottom-0 h-40 w-full opacity-25 sm:h-52"
       >
-        <path d="M0 220C250 140 400 290 700 220C980 156 1180 230 1440 160V320H0V220Z" fill="#059BF7" />
+        <path d="M0 220C250 140 400 290 700 220C980 156 1180 230 1440 160V320H0V220Z" fill="#A22CF0" />
       </svg>
 
       <div className="shell relative grid gap-10 lg:grid-cols-12 lg:items-end">
@@ -47,7 +47,7 @@ export function ClosingCta() {
         <div className="lg:col-span-5 lg:justify-self-end">
           <div className="w-full max-w-sm rounded-[24px] border border-cream/20 bg-ink-deep/35 p-5 backdrop-blur-sm sm:p-6">
             <div className="rounded-xl bg-cream p-4">
-              <Wordmark className="w-[190px]" />
+              <Wordmark className="w-[210px]" />
             </div>
             <a
               href="#/order"

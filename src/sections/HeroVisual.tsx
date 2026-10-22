@@ -10,7 +10,7 @@ function RotatingSeal() {
   return (
     <motion.div
       aria-hidden="true"
-      className="absolute -top-6 -left-4 z-10 size-28 rounded-full border border-ink/10 bg-cream shadow-[0_16px_40px_-24px_rgba(2,31,79,0.4)] sm:-top-8 sm:-left-8 sm:size-36"
+      className="absolute -top-6 -left-4 z-10 size-28 rounded-full border border-ink/10 bg-cream shadow-[0_16px_40px_-24px_rgba(23,5,46,0.35)] sm:-top-8 sm:-left-8 sm:size-36"
       animate={reduceMotion ? undefined : { rotate: 360 }}
       transition={reduceMotion ? undefined : { repeat: Infinity, duration: 44, ease: 'linear' }}
     >
@@ -18,7 +18,7 @@ function RotatingSeal() {
         <defs>
           <path id={pathId} d="M100,100 m-74,0 a74,74 0 1,1 148,0 a74,74 0 1,1 -148,0" />
         </defs>
-        <text fill="#021F4F" fontSize="12.5" fontWeight="700" letterSpacing="3.1">
+        <text fill="#17052E" fontSize="12.5" fontWeight="700" letterSpacing="3.1">
           <textPath href={`#${pathId}`}>{landingContent.hero.seal}</textPath>
         </text>
       </svg>
@@ -52,16 +52,16 @@ export function HeroVisual() {
         >
           <path
             d="M-20 500C90 430 180 560 290 505C390 455 440 500 520 455V640H-20V500Z"
-            fill="#D7E6F6"
+            fill="#E6D8F5"
           />
           <path
             d="M-20 545C95 475 185 600 300 545C400 498 450 535 520 500V640H-20V545Z"
-            fill="#059BF7"
+            fill="#A22CF0"
             fillOpacity="0.18"
           />
           <path
             d="M-20 590C100 525 200 645 310 592C408 546 458 575 520 550V640H-20V590Z"
-            fill="#0350B1"
+            fill="#7211D8"
             fillOpacity="0.12"
           />
         </svg>
@@ -98,11 +98,11 @@ export function HeroVisual() {
         <div className="absolute inset-x-5 bottom-5 rounded-2xl bg-ink p-4 text-cream sm:inset-x-6 sm:bottom-6 sm:p-5">
           <div className="grid grid-cols-2 gap-4">
             <div>
-              <p className="eyebrow text-electric">01 / Hangat</p>
+              <p className="eyebrow text-orchid">01 / Hangat</p>
               <p className="mt-1 font-display text-lg leading-none font-semibold sm:text-xl">Renyah</p>
             </div>
             <div className="border-l border-cream/15 pl-4">
-              <p className="eyebrow text-electric">02 / Dingin</p>
+              <p className="eyebrow text-orchid">02 / Dingin</p>
               <p className="mt-1 font-display text-lg leading-none font-semibold sm:text-xl">Segar</p>
             </div>
           </div>

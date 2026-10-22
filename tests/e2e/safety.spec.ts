@@ -45,10 +45,11 @@ test('QR graphics are explicitly non-functional', async ({ page }) => {
 
   const qr = page.getByRole('img', { name: /Ilustrasi QR QRIS untuk demo/i })
   await expect(qr).toBeVisible()
-  await expect(qr.getByText('DEMO', { exact: true })).toBeVisible()
-  await expect(qr.getByText('TIDAK DAPAT DIPINDAI')).toBeVisible()
+  await expect(qr).toHaveAttribute('alt', /tidak dapat dipindai/i)
+  await expect(page.getByText(/QR ilustrasi · tidak dapat dipindai/i)).toBeVisible()
 
   const body = await page.locator('body').innerText()
+  expect(body).toContain('DEMO ONLY')
   expect(body).toContain('Tidak menerima pesanan atau pembayaran sungguhan')
   expect(body).not.toMatch(/0x[a-f0-9]{20,}/i)
   expect(body).not.toMatch(/bitcoin:|ethereum:|qris:\/\//i)

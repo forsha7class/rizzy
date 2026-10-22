@@ -1,7 +1,7 @@
 # RIZZY — Open Questions & Placeholders
 
-Everything below is intentionally unresolved. The current build must not present
-these items as confirmed facts.
+This file records remaining unknowns, confirmed inputs, and reversible prototype
+decisions. Confirmed official prices are also encoded in the catalog.
 
 ## Assets
 
@@ -19,9 +19,9 @@ these items as confirmed facts.
 
 | Item | Status | Current handling |
 | --- | --- | --- |
-| Official package names | **Not established** | Demo names: Solo, Duo, Rame |
-| Official package contents | **Not established** | Demo description only; no portion or ingredient claims |
-| Official prices | **Not established** | Demo prices: Rp28.000 / Rp52.000 / Rp98.000, labelled “HARGA CONTOH” |
+| Official package names | **Not confirmed separately** | Current names: Solo, Duo, Rame |
+| Official package contents | **Not confirmed separately** | Presentation configuration only; no portion or ingredient claims |
+| Official prices | **Confirmed by owner** | Rp18.000 per package/portion; current build: Solo Rp18.000, Duo Rp36.000, Rame Rp72.000 |
 | Discounts, tax, delivery fees | **Not established** | Deliberately none |
 | USDT network / wallet policy | **Not established** | No address, network, or live rate; illustrative value only |
 | USDT reference rate | **Not official** | Fixed demo rate Rp16.000, labelled “bukan kurs resmi” |
@@ -51,15 +51,15 @@ these items as confirmed facts.
 
 ## Decisions made for the prototype (reversible)
 
-1. **Blue-led palette sampled from the logo** — navy, royal, electric, ice, with warm paper
-   and a small magenta photographic echo. No invented secondary brand colour.
+1. **Purple-led palette sampled from the new logo** — aubergine, royal violet, orchid,
+   lilac, with warm paper and a small magenta photographic echo. No invented brand colour.
 2. **Logo-led hero, photo used once** — the supplied product photo is authentic but casual;
    a tight crop keeps it as evidence rather than a full-bleed hero image.
 3. **Bricolage Grotesque + Plus Jakarta Sans** — chosen to match the rounded, energetic
    logo while keeping long copy readable.
 4. **No personal-data form** — the journey demonstrates selection, totals, payment method,
    and verification without collecting anything.
-5. **Demo packages and prices are configuration** — replacing them later requires edits in
+5. **Packages and official prices are configuration** — replacing them later requires edits in
    `src/config/demo-catalog.ts` only.
 6. **Scripted, deterministic statuses** — safer to present than randomised outcomes.
 
@@ -67,7 +67,8 @@ these items as confirmed facts.
 
 1. Can you provide the logo as SVG/AI/EPS, ideally with a one-colour and knockout version?
 2. Do you have packaging photos or a packaging mockup we may show?
-3. What are the final package names, contents, and prices?
+3. Confirm whether Rp18.000 applies only to Paket Solo or to every package. The current
+   build uses the per-portion mapping above (Duo 36k, Rame 72k).
 4. Should USDT remain in the final concept? If yes, which network and how should the
    rate be sourced in a future real system?
 5. Which contact channels and social accounts are approved for publication?

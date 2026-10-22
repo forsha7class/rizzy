@@ -14,6 +14,7 @@ import { cn } from '../lib/cn'
 import { useHashRoute } from '../lib/hash-router'
 import { ArrowIcon, buttonStyles } from '../components/ui/Button'
 import { siteConfig } from '../config/site'
+import { asset } from '../lib/assets'
 
 const methodCopy: Record<
   PaymentMethod,
@@ -25,7 +26,7 @@ const methodCopy: Record<
     note: demoPayment.qrisNote,
     instructions: [
       'Buka aplikasi pembayaran pilihanmu.',
-      'Perhatikan QR contoh — tidak dapat dipindai.',
+      'Perhatikan QR ilustrasi — tidak dapat dipindai.',
       'Lanjutkan dengan tombol simulasi di bawah.',
     ],
   },
@@ -41,30 +42,29 @@ const methodCopy: Record<
   },
 }
 
-function MethodIcon({ method }: { method: PaymentMethod }) {
+function MethodLogo({ method }: { method: PaymentMethod }) {
   if (method === 'qris') {
     return (
-      <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5" fill="none">
-        <path
-          d="M4 9V5a1 1 0 011-1h4M15 4h4a1 1 0 011 1v4M20 15v4a1 1 0 01-1 1h-4M9 20H5a1 1 0 01-1-1v-4M8 8h2v2H8zM14 8h2v2h-2zM8 14h2v2H8zM14 14h2v2h-2z"
-          stroke="currentColor"
-          strokeWidth="1.7"
-          strokeLinecap="round"
+      <span className="grid h-10 w-[72px] shrink-0 place-items-center rounded-xl border border-ink/10 bg-white px-2 sm:w-[88px]">
+        <img
+          src={asset('assets/brand/qris.svg')}
+          alt=""
+          aria-hidden="true"
+          className="h-[18px] w-auto sm:h-[22px]"
         />
-      </svg>
+      </span>
     )
   }
 
   return (
-    <svg aria-hidden="true" viewBox="0 0 24 24" className="size-5" fill="none">
-      <circle cx="12" cy="12" r="8.5" stroke="currentColor" strokeWidth="1.7" />
-      <path
-        d="M9 7.5h6M12 6v2.5m-3 2h6m-6 2.5h4.5a1.5 1.5 0 010 3H9m3 0V18"
-        stroke="currentColor"
-        strokeWidth="1.7"
-        strokeLinecap="round"
+    <span className="grid size-10 shrink-0 place-items-center rounded-full border border-ink/10 bg-white">
+      <img
+        src={asset('assets/brand/usdt.svg')}
+        alt=""
+        aria-hidden="true"
+        className="size-7"
       />
-    </svg>
+    </span>
   )
 }
 
@@ -194,25 +194,33 @@ export function PaymentPage() {
                       document.getElementById(`tab-${nextMethod}`)?.focus()
                     }}
                     className={cn(
-                      'flex min-h-14 items-center gap-3 rounded-xl border px-3 text-left transition-[background-color,border-color,box-shadow] duration-200 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-electric sm:px-4',
+                      'flex min-h-14 items-center rounded-xl border px-3 text-left transition-[background-color,border-color,box-shadow] duration-200 focus-visible:outline-3 focus-visible:outline-offset-2 focus-visible:outline-electric sm:gap-3 sm:px-4',
+                      item === 'qris' ? 'justify-center sm:justify-start' : 'gap-3',
                       selected
                         ? 'border-royal/30 bg-cream shadow-sm'
                         : 'border-transparent bg-transparent hover:bg-cream/60',
                     )}
                   >
-                    <span
-                      className={cn(
-                        'grid size-9 shrink-0 place-items-center rounded-full border',
-                        selected ? 'border-royal bg-royal text-cream' : 'border-ink/15 text-ink/70',
-                      )}
-                    >
-                      <MethodIcon method={item} />
-                    </span>
+                    <MethodLogo method={item} />
                     <span className="min-w-0">
-                      <span className="block font-display text-base font-semibold">{methodCopy[item].name}</span>
-                      <span className="hidden truncate text-[0.6875rem] text-ink/70 sm:block">
-                        {methodCopy[item].kicker}
-                      </span>
+                      {item === 'qris' ? (
+                        <>
+                          <span className="sr-only">QRIS</span>
+                          <span className="hidden truncate font-display text-base font-semibold sm:block">
+                            QR domestik
+                          </span>
+                          <span className="hidden truncate text-[0.6875rem] text-ink/70 sm:block">
+                            Standar pembayaran nasional
+                          </span>
+                        </>
+                      ) : (
+                        <>
+                          <span className="block font-display text-base font-semibold">USDT</span>
+                          <span className="hidden truncate text-[0.6875rem] text-ink/70 sm:block">
+                            {methodCopy[item].kicker}
+                          </span>
+                        </>
+                      )}
                     </span>
                   </button>
                 )
@@ -225,8 +233,8 @@ export function PaymentPage() {
               aria-labelledby={`tab-${method}`}
               className="mt-3 rounded-2xl border border-ink/10 bg-paper/60 p-4 sm:p-5"
             >
-              <div className="grid gap-6 sm:grid-cols-[minmax(0,230px)_1fr] sm:items-start">
-                <MockQr method={method === 'qris' ? 'QRIS' : 'USDT'} seed={method === 'qris' ? 41 : 77} />
+              <div className="grid gap-6 sm:grid-cols-[minmax(0,280px)_1fr] sm:items-start">
+                <MockQr method={method === 'qris' ? 'QRIS' : 'USDT'} />
 
                 <div className="min-w-0">
                   <div className="flex flex-wrap items-center justify-between gap-2">
@@ -280,7 +288,8 @@ export function PaymentPage() {
 
             <p className="mt-3 px-1 text-[0.6875rem] leading-relaxed text-ink/70">
               Nominal, QR, dan status di panel ini adalah ilustrasi presentasi. Tidak ada data
-              pembayaran yang dikirim atau disimpan.
+              pembayaran yang dikirim atau disimpan. Logo QRIS dan USDT/Tether dipakai hanya untuk
+              identifikasi metode dan tidak menyiratkan afiliasi.
             </p>
           </section>
 
@@ -322,7 +331,7 @@ export function PaymentPage() {
               </div>
             </dl>
             <p className="mt-3 text-[0.6875rem] leading-relaxed text-ink/70">
-              Harga contoh, bukan harga resmi. Tidak ada ongkir, pajak, atau diskon.
+              Harga resmi RIZZY. Tidak ada ongkir, pajak, atau diskon.
             </p>
           </section>
 
@@ -392,7 +401,7 @@ export function PaymentPage() {
             className="rounded-[24px] border border-ink/15 bg-ink p-5 text-cream"
           >
             <div className="flex flex-wrap items-center justify-between gap-2">
-              <h2 id="controls-title" className="eyebrow text-electric">
+              <h2 id="controls-title" className="eyebrow text-orchid">
                 Panel kontrol demo
               </h2>
               <Badge tone="demo">Presenter</Badge>

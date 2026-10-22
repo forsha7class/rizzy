@@ -2,11 +2,11 @@
 
 ## 1. Direction
 
-**Premium street-food editorial.** The supplied logo is energetic, glossy, and blue;
+**Premium street-food editorial.** The supplied logo is energetic, glossy, and violet;
 the interface around it is calmer and more art-directed so the mark can lead.
-Warm paper neutrals keep the brand from feeling like a fintech page, while deep navy
-and electric blue carry the logo into the UI. Magenta appears only as a tiny echo of
-the bougainvillea in the product photograph.
+Warm paper neutrals keep the brand from feeling like a fintech page, while aubergine,
+royal violet, and orchid carry the logo into the UI. Gold stays as the food and
+demo-warning accent; magenta appears only as a tiny echo of the product photograph.
 
 Principles:
 
@@ -22,12 +22,13 @@ Sampled from the supplied RIZZY logo.
 
 | Token | Hex | Usage |
 | --- | --- | --- |
-| `--color-ink` | `#021F4F` | Primary text, dark sections, footer |
-| `--color-ink-deep` | `#01142F` | Deepest background layer |
-| `--color-royal` | `#0350B1` | Brand primary, links, selected states |
-| `--color-electric` | `#059BF7` | Accent, wave graphics, focus glow |
-| `--color-ice` | `#EEF4FB` | Cards, header, soft surfaces |
-| `--color-mist` | `#D7E6F6` | Borders on light surfaces |
+| `--color-ink` | `#17052E` | Primary text, dark sections, footer |
+| `--color-ink-deep` | `#0B0117` | Deepest background layer |
+| `--color-royal` | `#7211D8` | Brand primary, links, selected states |
+| `--color-electric` | `#A22CF0` | Accent, wave graphics, focus glow |
+| `--color-orchid` | `#D9A6FF` | Accent text on dark surfaces |
+| `--color-ice` | `#F7F2FD` | Cards, header, soft surfaces |
+| `--color-mist` | `#E6D8F5` | Borders on light surfaces |
 | `--color-paper` | `#F6F2E8` | Page ground |
 | `--color-cream` | `#FFFDF7` | Elevated cards |
 | `--color-gold` | `#E9A63C` | Warm food accent, warning states |
@@ -35,8 +36,10 @@ Sampled from the supplied RIZZY logo.
 | `--color-success` | `#1B7F5A` | Verified / completed states |
 | `--color-danger` | `#B3261E` | Destructive or error text only |
 
-Contrast: ink on paper/ice exceeds AA for body text. Electric blue is never used for
-small body copy on light backgrounds; it is decorative or paired with ink.
+Contrast: ink on paper/ice is 17–19:1; royal on cream is 7.4:1; electric on cream is
+4.97:1. Electric is reserved for decorative accents and focus rings, and `orchid` is
+used for small text on ink surfaces (9.9:1). Official QRIS/Tether marks keep their
+real brand colours; they are never recoloured to purple.
 
 ## 3. Typography
 
@@ -82,7 +85,7 @@ Italic display is allowed for one emphasised phrase per view, never for long cop
 
 ### Header
 - Sticky, 64/80 px tall, ice/95 with blur and a hairline.
-- Logo wordmark at 104–124 px wide. Desktop nav in uppercase label style.
+- Logo wordmark at 108–136 px wide. Desktop nav in uppercase label style.
 - Mobile: 44 px menu button; full-height panel with large links, CTA, demo note.
 - No hidden focusable content while the menu is closed.
 
@@ -99,16 +102,20 @@ Italic display is allowed for one emphasised phrase per view, never for long cop
 - Ink background, cream text, gold “DEMO ONLY” chip, 12–14 px body size, never below 12 px.
 - Contextual notes inside the payment panels reinforce the same message; the inline card variant remains available for future screens.
 
-### QR mock
-- Decorative 29×29 matrix from a seeded generator, three finder blocks.
-- Centre block reads **DEMO**; bottom band reads **TIDAK DAPAT DIPINDAI**.
-- Never encodes a payload. Exposed as `role="img"` with a descriptive label.
-- Rendered in a white panel with a hairline and corner registration marks.
+### Payment QR artwork
+- Supplied QRIS/USDT artwork recoloured to the purple palette, with official QRIS and
+  Tether marks in the header and the new RIZZY monogram at the centre.
+- The centre medallion covers the QR modules; the supplied artwork is non-decodable and
+  the banner reads **DEMO ONLY — TIDAK DAPAT DIPINDAI**.
+- Never encodes a payload. Exposed as an `<img>` with a descriptive non-scannable alt.
+- Official marks are placed on white plates and keep their real brand colours.
+- Trademark note in the payment panel: marks are for method identification only and
+  imply no affiliation.
 
 ### Status
 - Pill with icon dot plus text. Always prefixed as simulation where relevant.
 - Under/overpayment use gold/magenta tinted panels and explicit “ditahan” language.
-- Verified/processing/completed use green/blue tones, never celebratory payment claims.
+- Verified/processing/completed use green/violet tones, never celebratory payment claims.
 
 ### Inputs
 - Package choice = native radio inside a styled label (keyboard and screen-reader safe).
@@ -125,6 +132,13 @@ Italic display is allowed for one emphasised phrase per view, never for long cop
 - Originals remain untouched in `assets-upload/`.
 - All web derivatives live in `public/assets/` and can be replaced without code changes.
 - If photography is removed later, the showcase falls back to a typographic frame.
+
+### Third-party marks
+- QRIS wordmark: Wikimedia Commons (CC0), based on Bank Indonesia material.
+- Tether/USDT mark: Tether media kit.
+- Both are bundled locally, used only to identify the simulated payment methods, and
+  keep their official colours. No affiliation or endorsement is implied. The supplied
+  QR card artwork remains the visual source for the payment panels.
 
 ## 7. Motion
 
@@ -155,4 +169,5 @@ No parallax, scroll locking (except the mobile menu), or cursor effects.
 - Indonesian-first, conversational but not slang-heavy.
 - Short sentences. Concrete nouns. No exclamation stacking.
 - Never invent statistics, testimonials, awards, certifications, or contact details.
-- Say “konsep”, “simulasi”, or “belum ditetapkan” when something is not final.
+- Say “simulasi” when the interaction is not real. Prices are official and clearly
+  separated from the simulated ordering flow.

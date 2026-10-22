@@ -18,7 +18,7 @@ export function Hero() {
             {landingContent.hero.eyebrow}
           </p>
 
-          <Wordmark className="mt-7 w-[260px] sm:w-[330px] lg:w-[350px]" priority />
+          <Wordmark className="mt-7 w-[280px] sm:w-[360px] lg:w-[390px]" priority />
 
           <h1
             id="hero-title"

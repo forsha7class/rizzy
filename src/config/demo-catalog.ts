@@ -4,15 +4,14 @@ export type DemoPackage = {
   shortDescription: string
   contents: string[]
   priceIdr: number
-  isDemo: true
 }
 
 /**
  * ---------------------------------------------------------------------------
- * DEMONSTRATION CATALOG — NOT OFFICIAL RIZZY PRICING
+ * OFFICIAL RIZZY PRICING — SIMULATED ORDERING
  * ---------------------------------------------------------------------------
- * Official packages and prices have not been established. Replace the entries
- * below when confirmed. Keep `isDemo: true` until prices are approved.
+ * Prices below are the official RIZZY package prices. The ordering and payment
+ * flow on this site remains a presentation demo and never creates a real order.
  */
 export const demoCatalog: DemoPackage[] = [
   {
@@ -20,32 +19,29 @@ export const demoCatalog: DemoPackage[] = [
     name: 'Paket Solo',
     shortDescription: 'Satu porsi, satu minuman. Untuk makan siang sendiri.',
     contents: ['1 Chicken Katsu', '1 Es Kelapa'],
-    priceIdr: 28_000,
-    isDemo: true,
+    priceIdr: 18_000,
   },
   {
     id: 'duo',
     name: 'Paket Duo',
     shortDescription: 'Dua porsi untuk dimakan berdua.',
     contents: ['2 Chicken Katsu', '2 Es Kelapa'],
-    priceIdr: 52_000,
-    isDemo: true,
+    priceIdr: 36_000,
   },
   {
     id: 'rame',
     name: 'Paket Rame',
     shortDescription: 'Empat porsi untuk meja yang lebih ramai.',
     contents: ['4 Chicken Katsu', '4 Es Kelapa'],
-    priceIdr: 98_000,
-    isDemo: true,
+    priceIdr: 72_000,
   },
 ]
 
 export const catalogDisclaimer =
-  'HARGA CONTOH — bukan harga resmi RIZZY. Paket dan harga final belum ditetapkan.'
+  'Harga resmi RIZZY. Seluruh alur pemesanan dan pembayaran di situs ini tetap simulasi.'
 
 export const packageDisclaimer =
-  'Paket contoh untuk keperluan presentasi. Bukan konfigurasi produk final.'
+  'Paket dan isi mengikuti konfigurasi presentasi. Tidak ada transaksi nyata.'
 
 export function findPackage(id: string | null): DemoPackage | undefined {
   if (!id) return undefined

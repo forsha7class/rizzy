@@ -26,7 +26,7 @@ export function SectionHeading({
         className={cn(
           'mb-5 flex items-center gap-3',
           align === 'center' && 'justify-center',
-          dark ? 'text-electric' : 'text-royal',
+          dark ? 'text-orchid' : 'text-royal',
         )}
       >
         {index ? (

@@ -32,22 +32,22 @@ describe('stepQuantity', () => {
 
 describe('calculateTotals', () => {
   it('calculates subtotal from unit price and quantity', () => {
-    expect(calculateTotals(28_000, 3)).toEqual({
+    expect(calculateTotals(18_000, 3)).toEqual({
       quantity: 3,
-      unitPriceIdr: 28_000,
-      subtotalIdr: 84_000,
-      totalIdr: 84_000,
+      unitPriceIdr: 18_000,
+      subtotalIdr: 54_000,
+      totalIdr: 54_000,
     })
   })
 
   it('does not add fees, tax, or discounts', () => {
-    const totals = calculateTotals(52_000, 2)
+    const totals = calculateTotals(36_000, 2)
     expect(totals.totalIdr).toBe(totals.subtotalIdr)
-    expect(totals.totalIdr).toBe(104_000)
+    expect(totals.totalIdr).toBe(72_000)
   })
 
   it('clamps quantity and normalises invalid prices', () => {
-    expect(calculateTotals(28_000, 0).quantity).toBe(1)
+    expect(calculateTotals(18_000, 0).quantity).toBe(1)
     expect(calculateTotals(-10, 2).subtotalIdr).toBe(0)
     expect(calculateTotals(Number.NaN, 2).unitPriceIdr).toBe(0)
   })

@@ -25,7 +25,7 @@ export function Wordmark({
         src={asset(`assets/brand/${file}.png`)}
         alt={decorative ? '' : alt}
         width={1200}
-        height={full ? 597 : 443}
+        height={full ? 403 : 343}
         loading={loading}
         decoding="async"
         className={cn('h-auto', className)}

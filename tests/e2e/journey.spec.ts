@@ -28,7 +28,7 @@ test('complete QRIS journey reaches a simulated completed state', async ({ page 
   await page.getByText('Paket Duo', { exact: true }).click()
   await page.getByRole('button', { name: 'Tambah jumlah' }).click()
   await expect(page.getByRole('button', { name: /^Checkout/ }).first()).toBeEnabled()
-  await expect(page.getByText('Rp 104.000', { exact: true }).first()).toBeVisible()
+  await expect(page.getByText('Rp 72.000', { exact: true }).first()).toBeVisible()
 
   await page.getByRole('button', { name: /^Checkout/ }).first().click()
   await expect(page).toHaveURL(/#\/checkout$/)
@@ -83,7 +83,7 @@ test('USDT view shows an illustrative, non-binding amount', async ({ page }) => 
 
   await page.getByRole('tab', { name: /USDT/i }).click()
   await expect(page.getByRole('img', { name: /Ilustrasi QR USDT untuk demo/i })).toBeVisible()
-  await expect(page.getByText(/≈ 1,75 USDT/)).toBeVisible()
+  await expect(page.getByText(/≈ 1,13 USDT/)).toBeVisible()
   await expect(page.getByText(/Bukan kurs resmi/i)).toBeVisible()
   await expect(page.getByText(/tidak menyediakan alamat wallet/i)).toBeVisible()
 })
