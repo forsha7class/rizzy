@@ -79,8 +79,8 @@ Covered:
 Tool: axe-core via `@axe-core/playwright`, tags `wcag2a`, `wcag2aa`, `wcag21a`,
 `wcag21aa`.
 
-Scanned: landing, order, checkout, payment (awaiting), payment (submitted), across the
-three Playwright projects.  
+Scanned: landing, order, checkout, payment (awaiting), payment (submitted),
+underpaid, and overpaid states across the three Playwright projects.  
 Result: **0 serious/critical violations** after fixing the QRIS tab accessible name and
 reviewing the purple contrast tokens.
 

@@ -104,7 +104,7 @@ Lingkungan: Node 24, Chromium headless, preview produksi lokal, 22 Oktober 2026.
 | `npm run lint` | lulus, 0 error |
 | `npm test` | 29 tes lulus (5 file) |
 | `npm run test:e2e` | 44 lulus, 4 dilewati (tes khusus mobile pada project tablet/desktop) |
-| axe-core (landing, order, checkout, payment, submitted) | 0 pelanggaran serious/critical |
+| axe-core (landing, order, checkout, payment, underpaid, overpaid) | 0 pelanggaran serious/critical |
 | `npm run verify:pages` | **PASSED** dari subpath `/rizzy/` |
 | Live GitHub Pages | **https://forsha7class.github.io/rizzy/** — HTTP 200, smoke test desktop/mobile lulus |
 | Lighthouse mobile | Performance **93** (run bersih), Accessibility **100**, Best Practices **100**, SEO **100** |
