@@ -3,7 +3,7 @@
 **Date:** 22 October 2026  
 **Environment:** Node `v24.22.1`, npm `11.19.1`, Chromium headless (Playwright 1.64.1), Linux  
 **Build:** production `dist/`, served locally at `http://127.0.0.1:4173`  
-**Deployment:** not performed. No remote, push, or GitHub Pages run was made.
+**Deployment:** public GitHub Pages at https://forsha7class.github.io/rizzy/ (branch `gh-pages`)
 
 Commands below were run from the repository root. Results are copied from actual runs,
 not projected targets.
@@ -112,6 +112,28 @@ Subpath verification PASSED
 `dist/.nojekyll` and `dist/robots.txt` are present. `base: './'` means the same build
 works at a domain root or any project subpath.
 
+
+## 5b. Live GitHub Pages deployment
+
+| Item | Result |
+| --- | --- |
+| Repository | `github.com/forsha7class/rizzy` (public) |
+| Source branch | `main` |
+| Pages branch | `gh-pages` (contents of `dist/`, including `.nojekyll`) |
+| Live URL | https://forsha7class.github.io/rizzy/ |
+| Root / index | HTTP 200 |
+| Logo WebP / OG image / robots | HTTP 200 / 200 / 200 |
+| Unknown static file | HTTP 404 as expected; hash routes need no server fallback |
+| Desktop journey | Landing → order → checkout → payment → submitted: passed |
+| Mobile 375 journey | Same journey: passed, no horizontal overflow |
+| Reload on `#/payment` | Guarded empty state rendered, no stored order |
+| Console/page errors | none |
+| Failed requests | none |
+
+The GitHub Actions workflow is intentionally not active: the available classic token
+has `repo` scope only, while publishing `.github/workflows/*` requires `workflow` scope.
+The same workflow is preserved at `docs/optional-github-actions.yml` for later use.
+
 ## 6. Lighthouse
 
 Tool: Lighthouse run locally against the production preview. Landing page.
@@ -157,6 +179,6 @@ covers desktop landing, mobile ordering, and desktop payment.
 - No real payment, order, inventory, delivery, admin, or backend flow exists to test.
 - No device testing beyond Chromium desktop/tablet/mobile emulation.
 - No screen-reader session (NVDA/VoiceOver) was recorded; axe and keyboard tests were used.
-- No GitHub Pages deployment was executed.
+- GitHub Actions deployment is not active; the live site is published manually from `gh-pages`.
 - Lighthouse scores are environment-specific and are not a guarantee for every network.
 - The logo is raster only; print quality and vector fidelity are not verified.

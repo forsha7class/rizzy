@@ -8,6 +8,8 @@ dengan alur pemesanan dan pembayaran yang **sepenuhnya disimulasikan**.
 Tidak ada backend, database, autentikasi, payment gateway, analytics, API eksternal,
 penyimpanan permanen, atau transaksi nyata di proyek ini.
 
+**Live:** https://forsha7class.github.io/rizzy/
+
 ![Landing RIZZY pada 1440 px](docs/screenshots/landing-1440.webp)
 
 ## Stack
@@ -101,6 +103,7 @@ Lingkungan: Node 24, Chromium headless, preview produksi lokal, 22 Oktober 2026.
 | `npm run test:e2e` | 44 lulus, 4 dilewati (tes khusus mobile pada project tablet/desktop) |
 | axe-core (landing, order, checkout, payment, submitted) | 0 pelanggaran serious/critical |
 | `npm run verify:pages` | **PASSED** dari subpath `/rizzy/` |
+| Live GitHub Pages | **https://forsha7class.github.io/rizzy/** — HTTP 200, smoke test desktop/mobile lulus |
 | Lighthouse mobile | Performance **91–94** (run bervariasi), Accessibility **100**, Best Practices **100**, SEO **100** |
 | Lighthouse desktop | Performance **100**, Accessibility **100**, Best Practices **100**, SEO **100** |
 | Build | JS ±132 kB gzip, CSS ±12,8 kB gzip |
@@ -116,18 +119,26 @@ jaringan, dan versi Lighthouse. E2E juga memeriksa:
 
 ## GitHub Pages
 
-Workflow siap di `.github/workflows/deploy.yml`, tetapi **belum pernah dijalankan,
-belum di-push, dan belum dideploy**. Untuk mengaktifkan:
+**Live:** https://forsha7class.github.io/rizzy/  
+**Repo:** https://github.com/forsha7class/rizzy  
+**Source:** branch `main` · **Deploy:** branch `gh-pages` (build statis `dist/`)
 
-1. Push repo ke GitHub.
-2. Buka **Settings → Pages → Build and deployment → Source: GitHub Actions**.
-3. Push ke branch `main` atau jalankan workflow manual.
+Deployment saat ini memakai branch `gh-pages`, bukan GitHub Actions, karena token
+GitHub yang tersedia saat deploy hanya memiliki scope `repo`. Halaman tetap sepenuhnya
+statis dan `base: './'` membuat build aman di subpath repo.
 
-`base: './'` membuat build bekerja di root maupun subpath repo tanpa mengubah konfigurasi.
-`public/.nojekyll` mencegah pemrosesan Jekyll.
+Untuk memperbarui situs setelah perubahan source:
 
-Satu catatan: `og:image` masih memakai path relatif karena domain final belum diketahui.
-Setelah domain/repo final ada, ganti dengan URL absolut agar preview sosial media bekerja.
+1. `npm run build`
+2. Ganti isi branch `gh-pages` dengan isi `dist/`, lalu push.
+3. Pastikan `.nojekyll` ikut ter-push.
+
+Workflow GitHub Actions tetap disimpan sebagai referensi di
+`docs/optional-github-actions.yml`. Workflow itu butuh token dengan scope `workflow`
+(tidak dimiliki token deploy saat ini) dan belum aktif.
+
+`public/.nojekyll` mencegah pemrosesan Jekyll. `og:image` kini memakai URL absolut
+`https://forsha7class.github.io/rizzy/assets/brand/og-image.jpg`.
 
 ## Dokumentasi
 

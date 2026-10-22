@@ -43,8 +43,8 @@ these items as confirmed facts.
 
 | Item | Status | Current handling |
 | --- | --- | --- |
-| GitHub repository name | **Unknown** | Vite `base: './'` avoids needing it |
-| GitHub account / Pages enablement | **Not authorized** | Workflow prepared, never run |
+| GitHub repository name | `forsha7class/rizzy` | Public repo; Vite `base: './'` keeps subpath working |
+| GitHub account / Pages enablement | **Deployed** | Pages served from `gh-pages`; Actions workflow awaits a `workflow`-scoped token |
 | Custom domain | **Not provided** | Not configured; OG image path stays relative until resolved |
 | Analytics | **Not requested** | None installed |
 | Real order handling | **Out of scope** | No backend, database, or submission |

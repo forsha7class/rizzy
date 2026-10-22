@@ -95,10 +95,12 @@ submitted --verify--> verified --process--> processing --complete--> completed
 - `base: './'` so assets resolve at `/` and at any `/<repo>/` path.
 - No `404.html` redirect hack: hash routing needs no server fallback.
 - `public/.nojekyll` prevents Jekyll processing.
-- Workflow: `npm ci` → `npm run build` → upload `dist` → deploy Pages.
-- Workflow is prepared but **not executed or pushed** without authorization.
+- Current deployment: build `dist/`, publish it to branch `gh-pages`, and serve Pages
+  from that branch at `https://forsha7class.github.io/rizzy/`.
+- A workflow-scoped token was not available at launch, so the Actions workflow was not
+  pushed. It is preserved at `docs/optional-github-actions.yml` for future automation.
 - Verification: copy `dist` into `<tmp>/rizzy/`, serve the parent, run a smoke test
-  against `http://127.0.0.1:<port>/rizzy/`.
+  against `http://127.0.0.1:<port>/rizzy/`, plus a live smoke test after deployment.
 
 ## 7. Phases
 
