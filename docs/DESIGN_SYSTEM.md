@@ -127,9 +127,10 @@ Italic display is allowed for one emphasised phrase per view, never for long cop
 - **Product photo:** supplied real photo. Cropped tight to the katsu and rice to keep
   the frame appetising; hand, drink cup, and sachet are excluded from the main card.
   Caption: “Foto produk RIZZY.” No retouching that changes portion or ingredients.
-- **Team photo:** supplied real photo, used once as a wide band with the caption
-  “Tim RIZZY.” No names or roles are invented.
-- Originals remain untouched in `assets-upload/`.
+- **Team photo:** removed at the owner's request. No photo of people appears on the site;
+  the Story section is text-only. No names or roles are invented.
+- Originals remain untouched in `assets-upload/`, except the team photo original
+  (`dokumen/IMG_3849.HEIC`), which was deleted with its web derivative.
 - All web derivatives live in `public/assets/` and can be replaced without code changes.
 - If photography is removed later, the showcase falls back to a typographic frame.
 

@@ -15,7 +15,7 @@ test('landing page presents the brand and reaches the demo', async ({ page }) =>
   await expect(page.getByRole('heading', { name: /Makan enak nggak harus ribet/i })).toBeAttached()
   await expect(page.getByRole('heading', { name: /Satu paket, dua suasana/i })).toBeAttached()
   await expect(page.getByRole('img', { name: /Kotak makan RIZZY/i })).toBeAttached()
-  await expect(page.getByText(/Tim RIZZY/i).first()).toBeAttached()
+  await expect(page.getByRole('heading', { name: /Coba alur pesannya/i })).toBeAttached()
 
   await page.getByRole('link', { name: /Buy Now/i }).first().click()
   await expect(page).toHaveURL(/#\/order$/)

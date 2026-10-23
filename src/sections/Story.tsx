@@ -1,4 +1,3 @@
-import { asset } from '../lib/assets'
 import { landingContent } from '../content/landing'
 import { SectionHeading } from '../components/ui/SectionHeading'
 import { Reveal } from '../components/ui/Reveal'
@@ -56,37 +55,6 @@ export function Story() {
             </Reveal>
           </div>
         </div>
-
-        <Reveal delay={0.1}>
-          <figure className="mt-16 sm:mt-20">
-            <div className="overflow-hidden rounded-[6px] border border-ink/15 bg-cream p-2">
-              <div className="relative overflow-hidden rounded-[2px]">
-                <img
-                  src={asset('assets/team/team.jpg')}
-                  alt={story.teamAlt}
-                  width={1800}
-                  height={1192}
-                  loading="lazy"
-                  decoding="async"
-                  className="aspect-[4/3] w-full object-cover object-[center_32%] sm:aspect-[16/8] lg:aspect-[21/8]"
-                />
-                <div
-                  className="pointer-events-none absolute inset-0 bg-linear-to-t from-ink/35 via-transparent to-transparent"
-                  aria-hidden="true"
-                />
-                <span className="eyebrow absolute top-4 left-4 rounded-full bg-cream/95 px-3 py-1.5 text-[0.6rem] text-ink backdrop-blur">
-                  Di balik RIZZY
-                </span>
-              </div>
-            </div>
-            <figcaption className="mt-4 flex flex-col gap-1 sm:flex-row sm:items-baseline sm:justify-between">
-              <p className="font-display text-lg font-semibold tracking-[-0.02em] text-ink">
-                {story.teamCaption}
-              </p>
-              <p className="text-xs text-ink/70">{story.teamSubcaption}</p>
-            </figcaption>
-          </figure>
-        </Reveal>
       </div>
     </section>
   )

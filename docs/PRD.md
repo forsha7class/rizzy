@@ -29,7 +29,7 @@ authentication, analytics, or real order submission.
 | Data | None persisted; in-memory React state only |
 | Payments | Visual simulation only |
 | Prices | Official: Solo Rp18.000, Duo Rp36.000, Rame Rp72.000; ordering stays simulated |
-| Photography | Supplied product and team photos only; no stock/generated food imagery |
+| Photography | Supplied product photo only; no photos of people, no stock/generated imagery |
 | Brand identity | Derived from the supplied RIZZY logo (purple family) |
 
 ## 3. Goals

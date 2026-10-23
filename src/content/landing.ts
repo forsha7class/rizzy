@@ -26,9 +26,6 @@ export const landingContent = {
       'RIZZY masih berupa konsep yang sedang dibangun. Situs ini adalah presentasi ide tersebut — bukan toko yang sudah beroperasi.',
     ],
     quote: 'Dua rasa yang saling menyeimbangkan, dalam satu paket yang nggak bikin repot.',
-    teamCaption: 'Tim RIZZY',
-    teamSubcaption: 'Di balik konsep yang sedang dibangun.',
-    teamAlt: 'Anggota tim RIZZY berfoto bersama.',
   },
   need: {
     index: '02',

@@ -29,7 +29,7 @@ shows a guarded empty state, because the prototype stores nothing.
 │   └─ Kenali RIZZY → scroll to story
 ├─ Marquee strip
 ├─ B · Story            id="story"      01 — Cerita
-│   └─ Team photo band “Tim RIZZY”
+│   └─ Concept quote + narrative copy (text only)
 ├─ C · Customer need    id="need"       02 — Kebutuhan
 ├─ D · Product          id="product"    03 — Produk
 │   └─ Real product photo, framed

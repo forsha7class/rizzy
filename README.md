@@ -84,15 +84,16 @@ Perubahan harga cukup dilakukan di catalog; alur pemesanan tetap simulasi.
 
 ## Aset
 
-- Asli yang diunggah tetap utuh di `assets-upload/` (tidak diubah).
+- Asli yang diunggah disimpan di `assets-upload/` dan tidak diubah, kecuali foto tim
+  yang dihapus beserta turunan webnya atas permintaan pemilik.
 - Turunan web ada di `public/assets/`:
   - `brand/logo-full`, `logo-wordmark` (PNG + WebP), monogram, favicon, OG image
   - `brand/qris.svg` dan `brand/usdt.svg` — official marks untuk identifikasi metode
   - `payment/qris-card` dan `payment/usdt-card` (PNG + WebP) — QR artwork ungu
   - `product/katsu.jpg` + `katsu-900.jpg` (foto produk asli, crop 4:5)
-  - `team/team.jpg` (foto tim, crop lebar)
 - Foto produk dipakai satu kali sebagai bukti visual; bukan hero full-bleed.
 - Tidak ada foto stok atau gambar makanan hasil AI.
+- Tidak ada foto orang yang ditampilkan di situs.
 
 ## Verifikasi terakhir
 
@@ -163,7 +164,7 @@ Workflow GitHub Actions tetap disimpan sebagai referensi di
 - Harga paket resmi; isi paket mengikuti konfigurasi presentasi.
 - Logo RIZZY yang tersedia hanya raster (PNG); belum ada SVG/AI/EPS. Mark QRIS dan
   Tether memakai SVG resmi untuk kebutuhan identifikasi.
-- Hanya ada satu foto produk dan satu foto tim.
+- Hanya ada satu foto produk; tidak ada foto orang yang ditampilkan.
 - Tidak ada data kontak, sosial media, alamat, testimoni, atau penghargaan yang dibuat-buat.
 - Keranjang/ pesanan hilang saat refresh.
 - QR tidak berfungsi dan USDT tidak memiliki alamat atau jaringan.

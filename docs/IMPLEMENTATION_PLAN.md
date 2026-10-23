@@ -23,8 +23,7 @@ rizzy/
 │  ├─ robots.txt
 │  └─ assets/
 │     ├─ brand/              logo, wordmark, monogram, favicons, OG image
-│     ├─ product/            real product photo + responsive derivative
-│     └─ team/               team photo
+│     └─ product/            real product photo + responsive derivative
 ├─ src/
 │  ├─ components/
 │  │  ├─ ui/                 Button, Badge, SectionHeading, DemoNotice, Stepper…
@@ -148,4 +147,4 @@ submitted --verify--> verified --process--> processing --complete--> completed
 | Refresh loses order | Documented; guarded empty state instead of a crash |
 | GitHub Pages subpath | Relative base + real subpath smoke test |
 | Motion sickness | `prefers-reduced-motion` gate on every animation |
-| Team photo consent | Owner confirmed use with neutral caption; recorded in open questions |
+| People shown without consent | No photo of people is published; the team photo was removed with its original |

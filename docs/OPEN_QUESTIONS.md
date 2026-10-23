@@ -11,8 +11,6 @@ decisions. Confirmed official prices are also encoded in the catalog.
 | Packaging photography | **Missing** | No packaging visual is claimed; product shown in supplied takeaway photo |
 | Additional product photos | **Missing** | One real photo, cropped editorially; no stock or generated imagery |
 | Es Kelapa standalone photo | **Missing** | Described in copy; not shown as a separate photo |
-| Team names and roles | **Not provided** | Caption only: “Tim RIZZY” |
-| Team photo consent | Confirmed by owner for this site | Neutral caption, no names |
 | Brand guide / typography rules | **Not provided** | Logo colours sampled; type chosen for this presentation |
 
 ## Commercial information
@@ -62,6 +60,8 @@ decisions. Confirmed official prices are also encoded in the catalog.
 5. **Packages and official prices are configuration** — replacing them later requires edits in
    `src/config/demo-catalog.ts` only.
 6. **Scripted, deterministic statuses** — safer to present than randomised outcomes.
+7. **No photos of people** — the supplied team photo was removed from the site at the
+   owner’s request; the Story section now runs as text only.
 
 ## Questions for the owner
 
@@ -72,8 +72,6 @@ decisions. Confirmed official prices are also encoded in the catalog.
 4. Should USDT remain in the final concept? If yes, which network and how should the
    rate be sourced in a future real system?
 5. Which contact channels and social accounts are approved for publication?
-6. Is the team photo cleared for public web use by everyone in it? (Currently used with a
-   neutral caption based on owner confirmation.)
-7. Is there an approved brand story, founding date, or founder biography we should use
+6. Is there an approved brand story, founding date, or founder biography we should use
    instead of the current concept-level copy?
-8. Which repository/domain will host the final GitHub Pages build?
+7. Which repository/domain will host the final GitHub Pages build?
